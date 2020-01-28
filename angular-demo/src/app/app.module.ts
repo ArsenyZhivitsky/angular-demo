@@ -4,18 +4,16 @@ import { NgModule } from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { UserComponent } from './user/user.component';
-import { UsersComponent } from './users/users.component';
+import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { UserPageComponent } from './user-page/user-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutComponent,
-    UserComponent,
-    UsersComponent
+    MainLayoutComponent,
+    HomePageComponent,
+    UserPageComponent
   ],
   imports: [
     BrowserModule,

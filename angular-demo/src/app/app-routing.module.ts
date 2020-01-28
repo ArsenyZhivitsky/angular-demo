@@ -1,13 +1,19 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {AboutComponent} from './about/about.component';
-import { UsersComponent } from './users/users.component';
+import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { UserPageComponent } from './user-page/user-page.component';
 
 const routes: Routes = [
-    {path: '', component: HomeComponent},
-    {path: 'users', component: UsersComponent},
-    {path: 'about', component: AboutComponent}
+    {
+        path: "",
+        component: MainLayoutComponent,
+        children: [
+            {path: "", redirectTo: "/", pathMatch: "full"},
+            {path: "", component: HomePageComponent},
+            {path: "user/:id", component: UserPageComponent}
+        ]
+    }
 ];
 
 @NgModule({
