@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 
@@ -8,6 +8,8 @@ import { MainLayoutComponent } from './shared/components/main-layout/main-layout
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { UserComponent } from './shared/components/user/user.component';
+import { LoginPageComponent } from './auth/login-page/login-page.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,15 @@ import { UserComponent } from './shared/components/user/user.component';
     MainLayoutComponent,
     HomePageComponent,
     UserPageComponent,
-    UserComponent
+    UserComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
